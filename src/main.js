@@ -15,11 +15,11 @@ Vue.component(Header.name, Header);
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
 
+// 导入自己的router.js 路由模块
+import router from './router/'
+
 // 导入App 跟组件
 import App from './App'
-
-// 导入自己的 router.js 路由模块
-import router from './router'
 
 Vue.config.productionTip = false
 

@@ -1,15 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+import homeComponent from '../pages/home/'
+import memberComponent from '../pages/member/'
+import shopcarComponent from '../pages/shopcar/'
+import searchComponent from '../pages/search/'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  routes: [ // 配置路由规则
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/home'
+    },
+    {
+      path: '/home',
+      component: homeComponent
+    },
+    {
+      path: '/member',
+      component: memberComponent
+    },
+    {
+      path: '/shopcar',
+      component: shopcarComponent
+    },
+    {
+      path: '/search',
+      component: searchComponent
     }
-  ]
+  ],
+  linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类, 默认的类叫做  router-link-active
 })
