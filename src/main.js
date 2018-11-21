@@ -8,8 +8,12 @@ Vue.use(VueRouter)
   
 // 按需导入 Mint-UI 中的组件
 import { Header } from 'mint-ui';
-
+// 注册组件
 Vue.component(Header.name, Header);
+
+//导入mui的样式
+import './lib/mui/css/mui.css'
+import './lib/mui/css/icons-extra.css'
 
 // 导入App 跟组件
 import App from './App'
