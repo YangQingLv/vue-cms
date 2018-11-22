@@ -5,7 +5,9 @@ import homeComponent from '../pages/home/'
 import memberComponent from '../pages/member/'
 import shopcarComponent from '../pages/shopcar/'
 import searchComponent from '../pages/search/'
-import newsListComponent from '../pages/home/newsList'
+import newsListComponent from '../pages/home/newsList/'
+import newsInfoComponent from '../pages/home/newsInfo/'
+
 
 Vue.use(Router)
 
@@ -34,6 +36,10 @@ export default new Router({
     {
       path: '/home/newsList',
       component: newsListComponent
+    },
+    {
+      path: '/home/newsInfo/:id',
+      component: newsInfoComponent
     }
   ],
   linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类, 默认的类叫做  router-link-active
