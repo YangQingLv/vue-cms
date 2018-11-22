@@ -26,14 +26,13 @@
 		</nav>
 
     <!-- 中间 router-view 区 -->
-    <transition class="">
+    <transition>
       <router-view></router-view>
     </transition>
   </div>
 </template>
 
 <script>
-
 </script>
 
  <style lang="less">
