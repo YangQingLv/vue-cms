@@ -13,6 +13,17 @@ import router from './router/'
 import vueResource from 'vue-resource'
 // 安装 vue-resource 
 Vue.use(vueResource)
+// 配置vue-resource的请求根域名
+Vue.http.options.root = 'http://www.lovegf.cn:8899/'
+
+// 导入格式化时间的插件
+import moment from 'moment'
+// 定义全局的过滤器(时间)    
+//          过滤器名                      传入的时间
+Vue.filter('dateFormat',function (dateStr, pattern = 'YYYY-MM-DD HH:mm:ss') {  
+  // 直接调用表示获取当前时间
+  return moment(dateStr).format(pattern)
+})
 
 // 按需导入 Mint-UI 中的组件
 import { Header, Swipe, SwipeItem } from 'mint-ui';
