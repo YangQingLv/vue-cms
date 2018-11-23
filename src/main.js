@@ -25,6 +25,9 @@ Vue.filter('dateFormat',function (dateStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
   return moment(dateStr).format(pattern)
 })
 
+// 全局设置 post 时候表单数据的格式组织形式    X-HTTP-Method-Override
+Vue.http.options.emulateHTTP = true;
+
 // 按需导入 Mint-UI 中的组件
 import { Header, Swipe, SwipeItem , Button} from 'mint-ui';
 
