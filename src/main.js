@@ -16,6 +16,11 @@ Vue.use(vueResource)
 // 配置vue-resource的请求根域名
 Vue.http.options.root = 'http://www.lovegf.cn:8899/'
 
+// 导入懒加载插件  vue-lazyload
+import VueLazyload from 'vue-lazyload'
+// 安装
+Vue.use(VueLazyload)
+
 // 导入格式化时间的插件
 import moment from 'moment'
 // 定义全局的过滤器(时间)    

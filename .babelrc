@@ -12,6 +12,8 @@
     ["component", [{
       "libraryName": "mint-ui",
       "style": true
-    }]]
-  ]
+    }]],
+    
+  ],
+  "ignore": ["./lib/mui/js/"]
 }

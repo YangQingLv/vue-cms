@@ -7,7 +7,7 @@
         <div class="comment-list">
             <div class="comment-item" v-for="(item, i) in comments" :key="item.add_time">
                 <div class="comment-title">
-                    第{{ i + 1 }}楼 用户名:{{ item.user_name }} 发表时间: {{ item.add_time | dateFormat }}
+                    第{{ i + 1 }}楼&nbsp;&nbsp;用户名:{{ item.user_name }}&nbsp;&nbsp;发表时间: {{ item.add_time | dateFormat }}
                 </div>
                 <div class="comment-body">
                     {{ item.content || "此用户很懒,什么都没说"}}
@@ -90,7 +90,7 @@ body {
     .comment-list {
       margin-top: 5px;
       .comment-item {
-        font-size: 14px;
+        font-size: 12px;
         .comment-title {
           background-color: #ccc;
           line-height: 28px;
