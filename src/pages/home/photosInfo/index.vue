@@ -1,9 +1,9 @@
 <template>
-    <div class="goodsList-container">
-        <h4 class="goodsList-title">{{ goodsList.title }}</h4>
+    <div class="photosInfo-container">
+        <h4 class="photosInfo-title">{{ photosInfo.title }}</h4>
         <p>
-            <span>发表时间:{{ goodsList.add_time }}</span>
-            <span>点击: {{ goodsList.click }}次</span>
+            <span>发表时间:{{ photosInfo.add_time }}</span>
+            <span>点击: {{ photosInfo.click }}次</span>
         </p>
         <hr>
         <!-- 缩略图区域 -->
@@ -14,7 +14,7 @@
         </div>
 
         <!-- 图片内容区域 -->
-        <div class="content" v-html="goodsList.content"></div>
+        <div class="content" v-html="photosInfo.content"></div>
         <!-- 评论区域 -->
         <!-- 可以直接引入写好的评论组件 -->
         <cmt-box :id="id"></cmt-box>
@@ -29,19 +29,19 @@
         data() {
             return {
                 id:this.$route.params.id,
-                goodsList:{},
+                photosInfo:{},
                 list:[]
             }
         },
         created() {
-            this.getGoodsList(),
+            this.getphotosInfo(),
             this.getList()
         },
         methods: {
-            getGoodsList() {
+            getphotosInfo() {
                 this.$http.get("api/getimageInfo/" + this.id).then(result => {
                     if(result.body.status === 0) {
-                        this.goodsList = result.body.message[0]
+                        this.photosInfo = result.body.message[0]
                     }
                 })
             },
@@ -66,9 +66,9 @@
 
 <style lang="less">
 body {
-    .goodsList-container {
+    .photosInfo-container {
         padding: 0 4px;
-        .goodsList-title {
+        .photosInfo-title {
             font-size: 14px;
             color: #226aff;
             margin: 13px 0;
@@ -78,7 +78,7 @@ body {
             display: flex;
             justify-content: space-between;
         }
-        .goodsList-content {
+        .photosInfo-content {
             font-size: 13px;
             line-height: 28px;
         }
