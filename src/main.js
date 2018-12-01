@@ -9,6 +9,10 @@ Vue.use(VueRouter)
 // 导入自己的router.js 路由模块
 import router from './router/'
 
+// 安装 图片预览工具(插件)
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
+
 // 导入 vue-resource 
 import vueResource from 'vue-resource'
 // 安装 vue-resource 

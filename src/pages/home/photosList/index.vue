@@ -16,20 +16,22 @@
 
     <!-- 图片列表区域 -->
     <ul class="photo-list">
-        <li v-for="item in images" :key="item.id">
+        <router-link v-for="item in images" :key="item.id" :to="'/home/goodsList/' + item.id" tag="li">
             <img v-lazy="item.img_url">
             <div  class="info">
                 <h4  class="info-title">{{ item.title }}</h4>
                 <div class="info-body">{{ item.zhaiyao }}</div>
             </div>
-        </li>
+        </router-link>
     </ul>
-
-
 </div>
 </template>
 
 <script>
+// arguments callee caller 在严格模式下无法使用 而webpack默认是采用严格模式打包的
+// 所以mui.js无法被打包编译
+// 解决方案: 在 .babelrc  文件中配置忽略, 将mui 的js文件全部忽略掉
+
 // 导入  mui 的js 文件
 import mui from "../../../lib/mui/js/mui.min.js";
 
@@ -96,8 +98,6 @@ export default {
 </script>
 
 <style lang="less">
-* {
-}
 body {
   background-color: #fff;
   .photo-list-container {
